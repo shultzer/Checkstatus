@@ -1,0 +1,147 @@
+<div id="result">
+    {% if notfound is not empty %}
+    <div class="danger alert-danger" role="alert">Такой заказ не найден!</div>
+    {% endif %}
+    {% if data is not empty %}
+
+    <div class="form_s2">
+        <div class="col-8 text-nowrap">
+            <h5 style="background: white;">{{ data[ 0 ][ 'client' ][ 'name' ] }}</h5>
+        </div>
+        <div class="col text-right">
+            <button data-request="onEmpty" data-attach-loading data-request-update="result:'#result'" >Выйти</button>
+        </div>
+        {% if mobile %}
+        {% for item in data %}
+        {% set i = 1 %}
+            <div class="card">
+                <div class="card-header" id="heading{{ i }}">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link"
+                                data-toggle="collapse"
+                                data-target="#collapse{{ i }}"
+                                aria-expanded="false"
+                                aria-controls="collapse{{ i }}">
+                            Заказ {{ item[ 'id_label' ] }}
+                            от {{ item['created_at'] }}
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse{{ i }}" class="collapse"
+                     aria-labelledby="heading{{ i }} "
+                     data-parent="#accordion">
+                    <div class="card-block" style="padding: 0px">
+                        <div class="table-responsive">
+                            <table class="table text-center"
+                                   style="display: inline-table;
+                                                           width: 100%; word-wrap: break-word;">
+                                <tbody>
+                                <tr>
+                                    <th class="table-active" style="width:
+                                                                200px">Устройство:
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td> {{ item[ 'brand' ]}} {{ item[ 'model' ] }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active">Серийный номер:</th>
+
+                                </tr>
+                                <tr>
+                                    <td style="word-break: break-all;"> {{ item[ 'serial' ] }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active">Неисправность:</th>
+                                </tr>
+                                <tr>
+                                    <td> {{ item[ 'malfunction' ] }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active">Стоимость:</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{ item[ 'price' ] }} руб
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active">Состояние:</th>
+
+                                </tr>
+                                <tr>
+                                    <td class="font-weight-bold"> {{ item[ 'status' ][ 'name' ] }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        {% set i=i+1 %}
+        {% endfor %}
+        {% endif %}
+
+        {% if not mobile %}
+        {% set i = 1 %}
+        {% for item in data %}
+            <div class="card">
+                <div class="card-header" id="heading{{ i }}">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link"
+                                data-toggle="collapse"
+                                data-target="#collapse{{ i }}"
+                                aria-expanded="false"
+                                aria-controls="collapse{{ i }}">
+                            Заказ {{ item[ 'id_label' ] }}
+                            от {{ item['created_at'] }}
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse{{ i }}" class="collapse"
+                     aria-labelledby="heading{{ i }}"
+                     data-parent="#accordion">
+                    <div class="card-block" style="padding: 0px">
+                        <div class="table-responsive">
+                            <table class="table"
+                                   style="display: inline-table;
+                                                       width: 100%; word-wrap: break-word;">
+                                <tbody>
+                                <tr>
+                                    <td style="width:200px">Устройство
+                                    </td>
+                                    <td>{{ item[ 'brand' ] }} {{ item[ 'model' ] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Серийный номер</td>
+                                    <td style="word-break: break-all;">{{ item[ 'serial' ] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Неисправность</td>
+                                    <td>{{ item[ 'malfunction' ] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Стоимость</td>
+                                    <td>
+                                        {{ item[ 'price' ] }} руб
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Состояние</td>
+                                    <td class="font-weight-bold">{{ item[ 'status' ][ 'name' ] }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        {% set i=i+1 %}
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endif %}
+
+</div>

@@ -1,0 +1,200 @@
+useContent = 1
+default = 1
+[session]
+==
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ this.page.meta_title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ [
+      'assets/vendor/font-awesome/css/font-awesome.min.css',
+      'assets/vendor/animate.css/animate.min.css',
+      'assets/vendor/plyr/dist/plyr.css',
+      'assets/vendor/bootstrap/dist/css/review.css',
+      'assets/vendor/style.css',
+      'assets/vendor/media.css'
+    ]|theme }}" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+    {% styles %}
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.materialdesignicons.com/2.4.85/css/materialdesignicons.min.css">
+    <style>
+        /* Individual bars */
+        .bar-5 {width: {{ five_procent }}%; height: 10px; background-color: #666; border-radius:6px!important}
+        .bar-4 {width:  {{ four_procent }}%; height: 10px; background-color: #666; border-radius:6px!important}
+        .bar-3 {width:  {{ three_procent }}%; height: 10px; background-color: #666; border-radius:6px!important}
+        .bar-2 {width:  {{ two_procent }}%; height: 10px; background-color: #666; border-radius:6px!important}
+        .bar-1 {width:  {{ one_procent }}%; height: 10px; background-color: #666; border-radius:6px!important}
+        .av {font-size: 24px}
+    </style>
+</head>
+<body>
+<div class="app">
+    <header>
+        <img class="header_bg out_1280" src="{{'assets/images/header/header_bg.png'|theme}}" alt=""/>
+        <img class="header_bg header_bg_1280 in_1280 out_375" src="{{'assets/images/header/header_bg_1280.png'|theme }}" alt=""/>
+        <img class="header_bg header_bg_375 in_375" src="{{'assets/images/header/header_bg_320.png'|theme}}" alt=""/>
+        <div class="nav_fixed">
+            <div class="container header_container">
+                <div class="logo_box">
+                    <a href="/"><img class="logo" src="{{'assets/images/logo/logo.png'|theme}}" alt=""/></a>
+                </div>
+                <div class="menu_box out_1280">
+                    <ul class="nav_menu">
+                        <li><span class="item_nav_1">Почему IMARTEX</span></li>
+                        <li><span class="item_nav_2">Акции</span></li>
+                        <li><span class="item_nav_3">Услуги</span></li>
+                        <li><span class="item_nav_4">Отзывы</span></li>
+                        <li><span class="item_nav_5">Наши контакты</span></li>
+                    </ul>
+                </div>
+                <div class="phone_box">
+                    <p class="tel mb10"><a href="84955878888">8 (495) 587-88-88</a></p>
+                    <p class="time">с 10:00 до 22:00 ежедневно</p>
+                </div>
+                <div class="lk_box">
+                    <p><a href="#kabinet">Личный кабинет</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="header_main container">
+            <div class="col_left pr out_1280">
+                <img class="laptop" src="{{'assets/images/header/laptop.png'|theme}}" alt="">
+            </div>
+            <div class="col_right">
+                <h1 class="mb40">Ремонт</br> компьютерной </br>техники</br class="in_375"> любой сложности</br>
+                    <span>в Домодедово</span>
+                </h1>
+                <img class="laptop_1280 in_1280 mb50" src="{{'assets/images/header/laptop_1280.png'|theme }}" alt="">
+                <div class="call_back">
+
+                    <div class="tel">
+                        <input type="tel" name="tel" placeholder="Ваш телефон">
+                    </div>
+                    <span class="button butt_call">Перезвоните мне</span>
+                </div>
+            </div>
+        </div>
+        <span class="button butt_down out_1280"></span>
+        <div class="address_box header_pos">
+            <h3>Как нас найти?</h3>
+            <p>г. Домодедово, ул. Корнеева, д. 1</p>
+            <a target="_blank" href="https://www.google.ru/maps/place/%D1%83%D0%BB.+%D0%9A%D0%BE%D1%80%D0%BD%D0%B5%D0%B5%D0%B2%D0%B0,+1,+%D0%94%D0%BE%D0%BC%D0%BE%D0%B4%D0%B5%D0%B4%D0%BE%D0%B2%D0%BE,+%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB.,+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F,+142000/@55.436874,37.7718104,17z/data=!3m1!4b1!4m5!3m4!1s0x414aa422e0319b19:0xb470b595078634e4!8m2!3d55.436874!4d37.7739991">Смотреть на карте</a>
+        </div>
+    </header>
+    <section class="s-1">
+        <div class="container">
+            <h2 class="text_center mb50">Почему выбирают IMARTEX</h2>
+        </div>
+        <div class="container container_de_1170 oh">
+            <div class="oa w100 pr">
+                <ul class="s-1-info pa">
+                    <li>
+                        <img class="ico" src="{{'assets/images/s1/ico1.png'|theme}}" alt>
+                        <h4 class="mt30">Цены от 200 рублей</h4>
+                        <p>Работаем по ценам частников, но несём ответственность за качество и гарантию после ремонта.</p>
+                    </li>
+                    <li>
+                        <img class="ico" src="{{'assets/images/s1/ico2.png'|theme}}" alt>
+                        <h4 class="mt30">БЕСПЛАТНАЯ ДИАГНОСТИКА</h4>
+                        <p>Протестируем устройство и доступно объясним, какой нужен ремонт и почему. Точно знаете за что платите.</p>
+                    </li>
+                    <li>
+                        <img class="ico" src="{{'assets/images/s1/ico3.png'|theme}}" alt>
+                        <h4 class="mt30">Всегда в курсе</h4>
+                        <p>Для согласования ремонта менеджер Вам позвонит. По готовности вышлем СМС-сообщение.</p>
+                    </li>
+                    <li>
+                        <img class="ico" src="{{'assets/images/s1/ico4.png'|theme}}" alt>
+                        <h4 class="mt30">Удалённая поддержка</h4>
+                        <p>Вам никуда не надо выезжать из дома или офиса. Устанавливаем и настраиваем программы, удаляем вирусы и всё это через интернет.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="s1_call_box mt70">
+                <p class="p1 mb10">Связаться с нами</p>
+                <p class="p2 mb20">в соцсетях и мессенджерах</p>
+                <p class="p3">Мы понимаем, что не всегда удобно разговаривать по телефону, поэтому вы можете написать нам нажав на иконку внизу экрана.</p>
+            </div>
+        </div>
+        <span class="box-shadow line mt90"></span>
+    </section>
+    <section class="s-2"  id="kabinet">
+        {% page %}
+    </section>
+    <footer>
+
+    </footer>
+    <div class="clear"></div>
+</div>
+<!-- Scripts -->
+
+<script src="{{ [
+      'assets/vendor/jquery/dist/jquery.min.js',
+      'assets/vendor/tether/dist/js/tether.min.js',
+      'assets/vendor/bootstrap/dist/js/bootstrap.min.js',
+      'assets/vendor/wow/dist/wow.min.js',
+      'assets/vendor/holderjs/holder.min.js',
+      'assets/vendor/plyr/dist/plyr.js',
+      'assets/js/scripts.js',
+      'assets/js/jquery.maskedinput.min.js',
+      'assets/js/jquery.min.js'
+    ]|theme }}"></script>
+
+{% framework extras %}
+{% scripts %}
+
+{% flash info %}
+<script>
+    $('#exampleModal').modal('show')
+</script>
+{% endflash %}
+{% flash error %}
+<script>
+    $({
+    {
+        message
+    }
+    }).collapse('show');
+    //$("#{{message}}").scrollTo();
+    document.getElementById("{{message}}").scrollIntoView();
+</script>
+{% endflash %}
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function () {
+        var widget_id = 'B3B9CfProA';
+        var d = document;
+        var w = window;
+
+        function l() {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//code.jivosite.com/script/widget/' + widget_id;
+            var ss = document.getElementsByTagName('script')[0];
+            ss.parentNode.insertBefore(s, ss);
+        }
+
+        if (d.readyState == 'complete') {
+            l();
+        } else {
+            if (w.attachEvent) {
+                w.attachEvent('onload', l);
+            } else {
+                w.addEventListener('load', l, false);
+            }
+        }
+    })();</script>
+<!-- {/literal} END JIVOSITE CODE -->
+</body>
+</html>

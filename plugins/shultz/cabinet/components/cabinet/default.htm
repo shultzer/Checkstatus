@@ -1,0 +1,20 @@
+{% if method == 'GET' %}
+<div class="col_right">
+    <div class="form_s2">
+        <p class="p1 mb35">Возможность</br>отслеживать свои</br>заказы</p>
+        <p class="p2 mb40">Введите свой номер телефона и проверьте статус ремонта.</p>
+        <p class="p3 mb35">Проверить статус заказа</p>
+        <div class="call_back">
+            <form data-request="onCheckstatus" data-request-update="result:'#result'" data-attach-loading>
+                <div class="tel">
+                    <input class="form-control" name="tel" type="tel" id="example-tel-input" data-fixed-length="2" placeholder="+7 (XXX) XXX-XX-XX">
+                </div>
+                <input class="button butt_call" type="submit" value="Проверить">
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+
+    {% partial 'result' %}
+</div>
